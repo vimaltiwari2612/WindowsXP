@@ -24,6 +24,7 @@ var subDropDownContent = [
 
 ];
 
+var loginTune = new Audio('tunes/login.mp3');
 
 setTime = function () {
     var today = new Date();
@@ -41,7 +42,6 @@ function register(e, div) {
     clearSubDropdowns(div);
     clearStartMenu(div);
     if (e.button === 2) {
-        console.log('open dropdown');
         openDropdown(e, div);
     }
 }
@@ -61,6 +61,67 @@ clearStartMenu = (parent) => {
     for (var i = 0; i < size; i++) {
         startmenus[i].remove();
     }
+}
+
+closeWindow = (button) => {
+    button.parentElement.parentElement.remove();
+    var windowPanel = document.getElementById("windowPanel");
+
+    windowPanel.childNodes.forEach(ele => {
+
+        if (ele.innerHTML == button.getAttribute("windowName")) {
+            ele.remove();
+        }
+    });
+}
+
+addTileToTaskbar = (icon) => {
+    var windowPanel = document.getElementById("windowPanel");
+    var tile = document.createElement("div");
+    tile.className = "windowTile";
+    tile.innerHTML = icon.title;
+    windowPanel.appendChild(tile);
+
+}
+
+openWindow = (icon) => {
+    console.log(icon.title);
+
+    var window = document.createElement("div");
+    window.className = "window";
+
+    //top Bar
+    var topBar = document.createElement("div");
+    topBar.style.width = 'inherit';
+    topBar.style.height = '30px';
+    topBar.style.backgroundColor = 'rgb(10, 115, 252)';
+    window.appendChild(topBar);
+
+    var close = document.createElement("div");
+    close.style.width = '25px';
+    close.style.height = '25px';
+    close.style.border = '1px solid white';
+    close.style.borderRadius = '5px';
+    close.style.backgroundImage = 'url("close.png")';
+    close.style.backgroundRepeat = 'no-repeat';
+    close.style.backgroundSize = 'cover';
+    close.style.float = 'right';
+    close.setAttribute("windowName", icon.title);
+    close.setAttribute('onclick', "closeWindow(this)");
+    topBar.appendChild(close);
+
+    var bottomBar = document.createElement("div");
+    bottomBar.style.width = 'inherit';
+    bottomBar.style.height = 'inherit';
+    bottomBar.innerHTML = icon.title;
+    bottomBar.style.textAlign = 'center';
+    bottomBar.style.fontSize = 'xxx-large';
+    window.appendChild(bottomBar);
+
+    var desktop = document.getElementById('desktop');
+    desktop.appendChild(window);
+
+    addTileToTaskbar(icon);
 }
 
 clearSubDropdowns = (parent) => {
@@ -90,6 +151,7 @@ setDesktop = () => {
     mycomp.style.width = '40px';
     mycomp.style.height = '40px';
     mycomp.title = 'My Computer';
+    mycomp.setAttribute("ondblclick", "openWindow(this)");
     iconBar.appendChild(mycomp);
 
     var mycompText = document.createElement('div');
@@ -110,6 +172,7 @@ setDesktop = () => {
     mycomp.style.width = '40px';
     mycomp.style.height = '40px';
     mycomp.title = 'Recycle Bin';
+    mycomp.setAttribute("ondblclick", "openWindow(this)");
     iconBar.appendChild(mycomp);
 
     var mycompText = document.createElement('div');
@@ -129,6 +192,7 @@ setDesktop = () => {
     mycomp.style.width = '40px';
     mycomp.style.height = '40px';
     mycomp.title = 'My Documents';
+    mycomp.setAttribute("ondblclick", "openWindow(this)");
     iconBar.appendChild(mycomp);
 
     var mycompText = document.createElement('div');
@@ -147,6 +211,7 @@ setDesktop = () => {
     mycomp.style.width = '40px';
     mycomp.style.height = '40px';
     mycomp.title = 'Windows Media Player';
+    mycomp.setAttribute("ondblclick", "openWindow(this)");
     iconBar.appendChild(mycomp);
 
     var mycompText = document.createElement('div');
@@ -166,6 +231,7 @@ setDesktop = () => {
     mycomp.style.width = '40px';
     mycomp.style.height = '40px';
     mycomp.title = 'MSN';
+    mycomp.setAttribute("ondblclick", "openWindow(this)");
     iconBar.appendChild(mycomp);
 
     var mycompText = document.createElement('div');
@@ -187,6 +253,7 @@ setDesktop = () => {
     mycomp.style.width = '40px';
     mycomp.style.height = '40px';
     mycomp.title = 'Internet Explorer';
+    mycomp.setAttribute("ondblclick", "openWindow(this)");
     iconBar.appendChild(mycomp);
 
     var mycompText = document.createElement('div');
@@ -272,6 +339,8 @@ var username = prompt("Enter your name to login!");
 if (username !== undefined && username !== "" && username !== null) {
     USER_NAME = username;
 }
+
+loginTune.play();
 
 function openStartMenu(e) {
 

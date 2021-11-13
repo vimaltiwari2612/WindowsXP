@@ -5,7 +5,7 @@ A Simulation of WindowsXP's Look and Feel.
 
 Try it once. 
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/22127564/141642746-0cf42106-5537-4d6f-8f5d-1294756c98d1.gif)
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/22127564/141654466-18397977-3973-47a1-a10e-04c36e61dbee.gif)
 
 ![image](https://user-images.githubusercontent.com/22127564/141634070-92a226d2-cbfb-45be-a42f-677ce97f7719.png)
 

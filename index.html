@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet" href="index.css" />
-        <title>Welcome! Windows Xp User</title>
-    </head>
-    <body>
-        <div id="desktop" class="desktop" onmousedown="register(event,this)" oncontextmenu="return false;"></div>
-        <div class="taskbar">
-        
-            <div class="start">
-                <img src="start.png"/>
-            </div>
-            <div class="windowPanel"></div>
-            <div class="rightPanel">
-                <img class="icons" src="rightpanel.png"></img>
-                <span class="time">10:10</span>
-            </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="stylesheet" href="index.css" />
+    <title>Welcome! Windows Xp User</title>
+</head>
+
+<body oncontextmenu="return false;">
+    <div id="desktop" class="desktop" onmousedown="register(event,this)" oncontextmenu="return false;"></div>
+    <div class="taskbar">
+
+        <div class="start" onclick="openStartMenu(this)">
+            <img src="start.png" title="Click here to start" />
         </div>
-        <script src="index.js"></script>
-    </body>
+        <div class="windowPanel"></div>
+        <div class="rightPanel">
+            <img class="icons" src="rightpanel.png" title="Icons"></img>
+            <span class="time" title="Time">10:10</span>
+        </div>
+
+    </div>
+    <script src="index.js"></script>
+</body>
+
 </html>

@@ -1,50 +1,51 @@
-body{
+body {
     /* The image used */
-  background-image: url("xp.jpg");
+    background-image: url("xp.jpg");
 
-  /* Full height */
-  height: 100%;
+    /* Full height */
+    height: 100%;
 
-  /* Center and scale the image nicely */
-  /*background-position: center;*/
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden; /* Hide scrollbars */
+    /* Center and scale the image nicely */
+    /*background-position: center;*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    /* Hide scrollbars */
 }
 
 
-.start{
+.start {
     width: fit-content;
     background-repeat: no-repeat;
-   
+
     height: inherit;
     float: left;
 }
 
-.windowPanel{
+.windowPanel {
     float: left;
 }
 
-.rightPanel{
-    width : 130px;
+.rightPanel {
+    width: 150px;
     background-color: rgb(95, 196, 243);
-    float :right;
+    float: right;
     height: inherit;
     border: 0.5px solid white;
 }
 
-.icons{
+.icons {
     height: inherit;
     float: left;
 }
 
-.time{
+.time {
     color: white;
-    float: right;
+    float: left;
     font-family: 'Times New Roman', Times, serif;
 }
 
-.desktop{
+.desktop {
     height: 1000px;
     width: 100%;
 }
@@ -55,15 +56,44 @@ body{
     bottom: 0;
     width: 100%;
     left: 0;
-    background-color : rgb(10, 115, 252);
+    background-color: rgb(10, 115, 252);
     border: 0.5px solid white;
     box-shadow: 0px 0px 0px 1px white;
 }
 
-.dropdown{
+.dropdown,
+.subDropDown {
     background-color: white;
     box-shadow: 1px;
-    width: 180px;
-    height: 210px;
+    width: 150px;
+    height: fit-content;
     box-shadow: 2px 2px gray;
+    padding: 10px;
+    font-family: auto;
+    font-size: smaller;
+}
+
+.dropdown :hover,
+.subDropDown :hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.subDropDown {
+    width: fit-content;
+    height: fit-content;
+}
+
+.startmenu {
+    background-color: rgb(10, 115, 252);
+    width: 368px;
+    height: 470px;
+    left: 0px;
+    bottom: 30px;
+    box-shadow: 2px 2px white;
+}
+
+.desktopIconBar {
+    width: 10%;
+    height: inherit;
 }

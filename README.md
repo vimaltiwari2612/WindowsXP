@@ -1,5 +1,7 @@
 # WindowsXP
-A Simulation of  WindowsXP UI and Desktop.
+A Simulation of WindowsXP UI and Desktop.
+
+***It's a desktop version, might not work properly on mobile and tablets.***
 
 Try it once. 
 
